@@ -1,4 +1,17 @@
 #!/bin/bash
-import py_compile
-import $PYFILE
-py_compile.compile($PYFILE)
+
+python_file="$PYFILE"
+
+if [ -z "$python_file" ]; then
+    echo "Usage: $0 <python_filename>"
+    exit 1
+fi
+
+python3 -m compileall "$python_file"
+
+compiled_filename="${python_file}c"
+
+mv "__pycache__/$compiled_filename" "$compiled_filename"
+
+rm -r __pycache__
+
