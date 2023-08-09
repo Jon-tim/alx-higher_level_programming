@@ -71,13 +71,16 @@ void free_listint(listint_t *head)
 int check_cycle(listint_t *list)
 {
 
+	listint_t *slow;
+	listint_t *fast;
+
 	if (!list || !list->next)
 	{
 		return (0);
 	}
 
-	listint_t *slow = list;
-	listint_t *fast = list;
+	slow = list;
+	fast = list;
 
 	while (slow && fast && fast->next)
 	{
