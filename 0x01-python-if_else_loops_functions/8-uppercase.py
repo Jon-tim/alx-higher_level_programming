@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 
+# print
 def uppercase(str):
     """write a string in uppercase."""
     for c in str:
