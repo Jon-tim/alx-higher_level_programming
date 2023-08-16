@@ -2,14 +2,6 @@
 # Write a function that replaces all occurrences of an element by another in a new list.
 
 def search_replace(my_list, search, replace):
-    if len(my_list) == 0:
-        return my_list
-
-    new_list = []
-    
-    for i in my_list:
-         if i == search:
-             i = replace
-         new_list.append(i)
+        new_list = list(map(lambda i: replace if i == search else i, my_list))
 
     return new_list
