@@ -2,14 +2,12 @@
 # Write a function that returns a key with the biggest integer value.
 
 def best_score(a_dictionary):
-    if a_dictionary is None:
+    if not a_dictionary:
         return None
-    maximum = 0
+    maximum = list(a_dictionary.keys())[0]
     holder = ""
     for key, value in a_dictionary.items():
-        if a_dictionary[key] > maximum:
-            maximum = a_dictionary[key]
+        if value > maximum:
+            maximum = value
             holder = key
-        else:
-            holder = None
     return holder
