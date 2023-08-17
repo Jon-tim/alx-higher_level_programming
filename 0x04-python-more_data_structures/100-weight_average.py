@@ -3,7 +3,7 @@
 # the weighted average of all integers tuple (<score>, <weight>)
 
 def weight_average(my_list=[]):
-    if my_list is None:
+    if not my_list:
         return 0
 
     new = list(map(lambda item: item[0] * item[1], my_list))
