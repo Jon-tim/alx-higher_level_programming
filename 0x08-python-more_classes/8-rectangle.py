@@ -82,14 +82,17 @@ class Rectangle:
         class_name = type(self).__name__
         return "{}({}, {})".format(class_name, self.__width, self.__height)
 
-        @staticmethod
+    @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         """
         static method that compares two rectangles' area
         Args:
             rect_1: first rectangle
             rect_2: second rectangle
-        Returns: rect_1 if greater or equal, otherwise rect_2
+        Returns:
+            rect_1 if greater or equal, otherwise rect_2
+        Raises:
+            TypeError: if rect_1 or rect_2 isn't an instance of Rectangle
         """
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
