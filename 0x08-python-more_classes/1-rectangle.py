@@ -24,7 +24,6 @@ class Rectangle:
         property that sets the rectangle's width
         Args:
             value: the given value
-        Returns: the height
         """
         if type(value) is not int:
             raise TypeError("width must be an integer")
@@ -43,7 +42,6 @@ class Rectangle:
         property that sets the rectangle's height
         Args:
             value: the given value
-        Returns: the height
         """
         if type(value) is not int:
             raise TypeError("height must be an integer")
