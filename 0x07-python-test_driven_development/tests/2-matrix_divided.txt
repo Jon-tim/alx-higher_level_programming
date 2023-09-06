@@ -1,0 +1,50 @@
+The ``2-matrix_divided`` module
+=========================
+
+Using ``2-matrix_divided``
+-----------------------
+
+This is a text file in .txt format.
+First import add_integer from 2-matrix_divided module:
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Now you can use it to divide a matrix. For example:
+
+
+>>> matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+>>> div = 2
+>>> result = matrix_divided(matrix, div)
+>>> result
+[[0.5, 1.0, 1.5], [2.0, 2.5, 3.0], [3.5, 4.0, 4.5]]
+
+The function takes a matrix (a list of lists of integers or floats) and a divisor (an integer or float) as arguments. It returns a new matrix with elements divided by the divisor, rounded to 2 decimal places.
+
+Let's test some edge cases:
+
+Dividing by zero should raise a ZeroDivisionError:
+
+>>> matrix_divided(matrix, 0)
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero
+
+Passing an invalid matrix (empty or with rows of different sizes) should raise a TypeError:
+
+>>> invalid_matrix = [[]]
+>>> matrix_divided(invalid_matrix, 2)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+>>> matrix_divided([[1, 2], [3, 4, 5]], 2)
+Traceback (most recent call last):
+...
+TypeError: Each row of the matrix must have the same size
+
+Passing an invalid divisor (not a number) should raise a TypeError:
+
+>>> matrix_divided(matrix, "two")
+Traceback (most recent call last):
+...
+TypeError: div must be a number

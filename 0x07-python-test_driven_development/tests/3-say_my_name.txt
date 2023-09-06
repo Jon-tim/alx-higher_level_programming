@@ -1,0 +1,37 @@
+The ``say_my_name`` module
+=========================
+
+Using ``say_my_name``
+-----------------------
+
+First, import the ``say_my_name`` function from the module:
+
+>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Now you can use it to print a full name. For example:
+
+>>> say_my_name("John", "Doe")
+My name is John Doe
+
+The function takes two arguments, `first_name` and `last_name`, both of which must be strings. It prints the full name in the format "My name is {first_name} {last_name}".
+
+Let's test some edge cases:
+
+Passing a non-string value for `first_name` should raise a TypeError:
+
+>>> say_my_name(42, "Doe")
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+
+Passing a non-string value for `last_name` should also raise a TypeError:
+
+>>> say_my_name("John", 123)
+Traceback (most recent call last):
+...
+TypeError: last_name must be a string
+
+If `last_name` is not provided, it should still work:
+
+>>> say_my_name("John")
+My name is John

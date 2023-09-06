@@ -1,0 +1,49 @@
+The ``0-add_integer`` module
+=========================
+
+Using ``0-add_integer``
+-----------------------
+
+This is a text file in .txt format.
+First import add_integer from 0-add_integer module:
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Now use it:
+
+>>> add_integer(None)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(None, None)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(False, True)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer(8, True)
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer(-34, -89)
+-123
+
+>>> add_integer(-0.034, -0.89)
+0
+
+>>> add_integer(0.4, 0.9)
+0
+
+>>> add_integer(6, "rue")
+Traceback (most recent call last):
+TypeError: b must be an integer
+
+>>> add_integer("8", 5)
+Traceback (most recent call last):
+TypeError: a must be an integer
+
+>>> add_integer("8", "True")
+Traceback (most recent call last):
+TypeError: a must be an integer

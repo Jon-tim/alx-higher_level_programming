@@ -1,0 +1,65 @@
+The ``text_indentation`` module
+=========================
+
+Using ``text_indentation``
+-----------------------
+
+First, import the ``text_indentation`` function from the module:
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Now you can use it to print text with two new lines after '.', '?', and ':'. Let's test various cases:
+# Test cases for text_indentation function
+# Scenario 1: Basic usage
+>>> text_indentation("Hello. How are you?")
+Hello.
+<BLANKLINE>
+How are you?
+<BLANKLINE>
+
+# Scenario 2: Multiple spaces
+>>> text_indentation("This   is a    test.")
+This   is a    test.
+<BLANKLINE>
+
+# Scenario 3: Multiple punctuations
+>>> text_indentation("This? is! a: test.")
+This?
+<BLANKLINE>
+is! a:
+<BLANKLINE>
+test.
+<BLANKLINE>
+
+# Scenario 4: Mixed punctuations and spaces
+>>> text_indentation("A: B. C? D! E :F")
+A:
+<BLANKLINE>
+B.
+<BLANKLINE>
+C?
+<BLANKLINE>
+D! E :
+<BLANKLINE>
+F
+
+
+# Scenario 5: Empty string
+>>> text_indentation("")
+
+# Scenario 6: No punctuations
+>>> text_indentation("No punctuations in this text")
+No punctuations in this text
+
+# Scenario 7: Special characters
+>>> text_indentation("Text with $pecial characters & symbols. What's next?")
+Text with $pecial characters & symbols.
+<BLANKLINE>
+What's next?
+<BLANKLINE>
+
+# Scenario 8: Non-string input (Expecting TypeError)
+>>> text_indentation(123)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
