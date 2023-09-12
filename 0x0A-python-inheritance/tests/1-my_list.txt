@@ -1,0 +1,27 @@
+The ``1-my_list`` module
+=========================
+
+Using ``1-my_list``
+-----------------------
+
+This is a text file in .txt format.
+First import MyList from 1-my_list module:
+
+>>> MyList = __import__('1-my_list').MyList
+
+Now use it:
+
+# Basic test case: Sorting a list of integers
+>>> my_list = MyList([3, 1, 2])
+>>> my_list.print_sorted()
+[1, 2, 3]
+
+# Test case with an empty list
+>>> empty_list = MyList([])
+>>> empty_list.print_sorted()
+[]
+
+# Test case with duplicate values
+>>> duplicates = MyList([4, 2, 4, 1, 2])
+>>> duplicates.print_sorted()
+[1, 2, 2, 4, 4]
