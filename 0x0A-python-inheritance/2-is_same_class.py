@@ -17,8 +17,7 @@ def is_same_class(obj, a_class):
             of the specified class
             Otherwise False
     """
-    if obj is not None and a_class is not None:
-        if type(obj) is a_class:
-            return True
-        else:
-            return False
+    if type(obj) is a_class:
+        return True
+    else:
+        return False
