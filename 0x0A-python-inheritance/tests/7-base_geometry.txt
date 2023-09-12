@@ -1,0 +1,38 @@
+The ``7-base_geometry`` module
+=========================
+
+Using ``7-base_geometry``
+-----------------------
+
+This is a text file in .txt format.
+First import BaseGeometry from 7-base_geometry module:
+
+>>> bgFn = __import__('7-base_geometry').BaseGeometry
+
+Now use it:
+
+# Test valid input (integer greater than 0)
+>>> bg = bgFn()
+>>> bg.integer_validator("side_length", 5)
+
+# Test valid input (integer equal to 0)
+>>> bg = bgFn()
+>>> bg.integer_validator("zero_length", 0)
+Traceback (most recent call last):
+    ...
+ValueError: zero_length must be greater than 0
+
+# Test invalid input (non-integer)
+>>> bg = bgFn()
+>>> bg.integer_validator("non_integer_length", 3.14)
+Traceback (most recent call last):
+    ...
+TypeError: non_integer_length must be an integer
+
+# Test invalid input (negative integer)
+>>> bg = bgFn()
+>>> bg.integer_validator("negative_length", -5)
+Traceback (most recent call last):
+    ...
+ValueError: negative_length must be greater than 0
+
