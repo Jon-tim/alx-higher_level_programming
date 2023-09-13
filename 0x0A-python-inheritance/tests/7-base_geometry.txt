@@ -29,6 +29,62 @@ Traceback (most recent call last):
     ...
 TypeError: non_integer_length must be an integer
 
+
+>>> bg = bgFn()
+>>> bg.integer_validator("non_integer", "3.14")
+Traceback (most recent call last):
+    ...
+TypeError: non_integer must be an integer
+
+>>> bg = bgFn()
+>>> bg.integer_validator("non_integer_length", (3.14,))
+Traceback (most recent call last):
+    ...
+TypeError: non_integer_length must be an integer
+
+>>> bg = bgFn()
+>>> bg.integer_validator("non_integer_length", [3.14])
+Traceback (most recent call last):
+    ...
+TypeError: non_integer_length must be an integer
+
+>>> bg = bgFn()
+>>> bg.integer_validator("non_integer_length", [3, 4])
+Traceback (most recent call last):
+    ...
+TypeError: non_integer_length must be an integer
+
+>>> bg = bgFn()
+>>> bg.integer_validator("non_integer_length", True)
+Traceback (most recent call last):
+    ...
+TypeError: non_integer_length must be an integer
+
+>>> bg = bgFn()
+>>> bg.integer_validator("non_integer_length", None)
+Traceback (most recent call last):
+    ...
+TypeError: non_integer_length must be an integer
+
+>>> bg = bgFn()
+>>> bg.area()
+Traceback (most recent call last):
+    ...
+Exception: area() is not implemented
+
+>>> bg = bgFn()
+>>> bg.integer_validator()
+Traceback (most recent call last):
+    ...
+TypeError: BaseGeometry.integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> bg = bgFn()
+>>> bg.integer_validator("age")
+Traceback (most recent call last):
+    ...
+TypeError: BaseGeometry.integer_validator() missing 1 required positional argument: 'value'
+
+
 # Test invalid input (negative integer)
 >>> bg = bgFn()
 >>> bg.integer_validator("negative_length", -5)
