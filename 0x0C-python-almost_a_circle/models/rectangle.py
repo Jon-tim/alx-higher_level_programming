@@ -127,6 +127,7 @@ class Rectangle(Base):
 
         def area(self):
             """
+            Calculate the area of the Rectangle instance
             Returns:
                 the area of a rectangle
             """
