@@ -3,6 +3,7 @@
 Base class definition
 """
 import json
+import os
 
 
 class Base:
