@@ -1,31 +1,27 @@
 #!/usr/bin/node
 
-const fs = require('fs');
+const fs = require('fs').promises;
 
 const fileA = process.argv[2];
 const fileB = process.argv[3];
 const fileC = process.argv[4];
 
-fs.readFile(fileA, 'utf-8', (firstErr, firstData) => {
-  if (firstErr) {
-    console.error(firstErr);
-    return;
-  }
-  const textOne = firstData;
+const readFile = (filePath) => {
+  return fs.readFile(filePath, 'utf-8');
+};
 
-  fs.readFile(fileB, 'utf-8', (secondErr, secondData) => {
-    if (secondErr) {
-      console.error(secondErr);
-      return;
-    }
-    const textTwo = secondData;
+const writeFile = (filePath, data) => {
+  return fs.writeFile(filePath, data);
+};
 
-    const textThree = textOne + '\n' + textTwo + '\n';
+readFile(fileA)
+  .then((textOne) => {
+    return readFile(fileB).then((textTwo) => {
+      const text = textOne + '\n' + textTwo + '\n';
 
-    fs.writeFile(fileC, textThree, (err) => {
-      if (err) {
-        console.error(err);
-      }
+      return writeFile(fileC, text);
     });
+  })
+  .catch((err) => {
+    console.error(err);
   });
-});
