@@ -29,7 +29,7 @@ def main():
     if rows:
         print(rows)
     else:
-        print('\n')
+        print(' ')
 
     cursor.close()
     db.close()
