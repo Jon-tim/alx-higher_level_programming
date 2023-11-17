@@ -4,7 +4,7 @@ with N (uppercase) from the database"""
 
 
 def main():
-    """create a connection and get all states with 'N'"""
+    """create a connection and get all states with N"""
     import MySQLdb
     import sys
 
