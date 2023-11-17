@@ -7,13 +7,14 @@ import sys
 
 host = "localhost"
 port = 3306
-username = sys.argv[1]
-password = sys.argv[2]
-database = sys.argv[3]
+user = sys.argv[1]
+pswd = sys.argv[2]
+db = sys.argv[3]
+
 
 def main():
     """create a connection and get all states"""
-    db = MySQLdb.connect(host=host, user=username, passwd=password, db=database, port=port)
+    db = MySQLdb.connect(host=host, user=user, passwd=pswd, db=db, port=port)
     cursor = db.cursor()
 
     cursor.execute("""SELECT * FROM states
