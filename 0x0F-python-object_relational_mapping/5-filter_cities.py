@@ -26,7 +26,10 @@ def main():
     cursor.execute(query, (state,))
 
     rows = cursor.fetchone()[0]
-    print(rows)
+    if rows:
+        print(rows)
+    else:
+        print('\n')
 
     cursor.close()
     db.close()
