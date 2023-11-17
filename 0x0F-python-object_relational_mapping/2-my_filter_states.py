@@ -20,9 +20,9 @@ def main():
 
     cursor.execute("""
                    SELECT * FROM states
-                   WHERE states.name = %s
+                   WHERE states.name = '{}'
                    ORDER BY states.id ASC;
-                   """, (state,))
+                   """.format(state))
 
     rows = cursor.fetchall()
     for row in rows:
