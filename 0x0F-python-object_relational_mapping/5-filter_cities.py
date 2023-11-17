@@ -17,7 +17,7 @@ def main():
 
     db = MySQLdb.connect(host=host, user=user, passwd=pswd, db=db, port=port)
     cursor = db.cursor()
-    query = """SELECT cities.name
+    query = """SELECT GROUP_CONCAT(cities.name SEPARATOR ', ')
                    FROM cities
                    JOIN states
                    ON cities.state_id = states.id
@@ -25,9 +25,8 @@ def main():
                    ORDER BY cities.id ASC;"""
     cursor.execute(query, (state,))
 
-    rows = cursor.fetchall()
-    for row in rows:
-        print(row)
+    rows = cursor.fetchone()[0]
+    print(rows)
 
     cursor.close()
     db.close()
