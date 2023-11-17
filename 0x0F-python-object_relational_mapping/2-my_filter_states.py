@@ -20,7 +20,7 @@ def main():
 
     cursor.execute("""
                    SELECT * FROM states
-                   WHERE states.name = '{}'
+                   WHERE states.name LIKE BINARY '{}'
                    ORDER BY states.id ASC;
                    """.format(state))
 
