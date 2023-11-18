@@ -17,7 +17,7 @@ def main():
 
     db = MySQLdb.connect(host=host, user=user, passwd=pswd, db=db, port=port)
     cursor = db.cursor()
-    query = """SELECT cities.name
+    query = """SELECT GROUP_CONCAT(cities.name SEPARATOR', ')
                    FROM cities
                    JOIN states
                    ON cities.state_id = states.id
