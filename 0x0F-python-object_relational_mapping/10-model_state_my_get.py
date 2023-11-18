@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-"""a script that lists all State objects that contain the
-letter a from the database hbtn_0e_6_usa"""
+"""a script that lists all State objects that is same
+the given state from the database hbtn_0e_6_usa"""
 
 
 def main():
