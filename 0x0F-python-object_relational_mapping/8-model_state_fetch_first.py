@@ -26,7 +26,7 @@ def main():
     if query:
         print('{}: {}'.format(query.id, query.name))
     else:
-        print("\n")
+        print("Nothing")
 
     session.close()
 
