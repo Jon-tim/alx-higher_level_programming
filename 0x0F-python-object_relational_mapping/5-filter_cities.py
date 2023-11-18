@@ -27,8 +27,10 @@ def main():
 
     rows = cursor.fetchall()
     if rows:
-        result = ', '.join(row[0] for row in rows)
+        result = ', '.join(row[0] for row in rows if row[0])
         print(result)
+    else:
+        print()
 
     cursor.close()
     db.close()
