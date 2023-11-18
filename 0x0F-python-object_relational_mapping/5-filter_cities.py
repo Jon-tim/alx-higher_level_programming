@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-"""A script that lists all states with a name starting
-with N (uppercase) from the database"""
+"""A script that lists all cities in a states
+from a state given from the database"""
 
 
 def main():
-    """create a connection and get all states with 'N'"""
+    """starting point"""
     import MySQLdb
     import sys
 
@@ -28,8 +28,6 @@ def main():
     rows = cursor.fetchone()[0]
     if rows:
         print(rows)
-    else:
-        print(' ')
 
     cursor.close()
     db.close()
