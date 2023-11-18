@@ -21,9 +21,9 @@ def main():
                    FROM cities
                    JOIN states
                    ON cities.state_id = states.id
-                   WHERE states.name = {}
-                   ORDER BY cities.id ASC;""".format(state)
-    cursor.execute(query)
+                   WHERE states.name = %s
+                   ORDER BY cities.id ASC;"""
+    cursor.execute(query, (state,))
 
     rows = cursor.fetchall()
     if rows:
