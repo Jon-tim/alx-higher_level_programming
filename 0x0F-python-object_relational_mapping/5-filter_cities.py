@@ -25,9 +25,10 @@ def main():
                    ORDER BY cities.id ASC;"""
     cursor.execute(query, (state,))
 
-    rows = cursor.fetchone()[0]
+    rows = cursor.fetchall()
     if rows:
-        print(rows)
+        result = ', '.join(row[0] for row in rows)
+        print(result)
 
     cursor.close()
     db.close()
