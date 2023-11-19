@@ -25,7 +25,7 @@ def main():
     query = session.query(City).order_by(City.id)
 
     for city in query:
-        print('{}:{} -> {}'.format(city.id, city.name, city.state.name))
+        print('{}: {} -> {}'.format(city.id, city.name, city.state.name))
     session.close()
 
 
