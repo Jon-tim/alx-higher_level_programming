@@ -7,9 +7,10 @@ and finally displays the body of the response.
 import requests
 import sys
 
-url = sys.argv[1]
-mail = sys.argv[2]
-payload = {'email': mail}
-req = requests.post(url, data=payload)
-response = req.text
-print(response)
+if __name__ == "__main__":
+    url = sys.argv[1]
+    mail = sys.argv[2]
+    payload = {'email': mail}
+    req = requests.post(url, data=payload)
+    response = req.text
+    print(response)
