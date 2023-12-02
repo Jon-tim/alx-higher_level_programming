@@ -12,7 +12,7 @@ import sys
 if __name__ == "__main__":
     url = sys.argv[1]
     mail = sys.argv[2]
-    data = {'email' : mail}
+    data = {'email': mail}
     url_values = urllib.parse.urlencode(data).encode('utf-8')
     # print(url_values)
     req = urllib.request.Request(url, url_values, method='POST')
