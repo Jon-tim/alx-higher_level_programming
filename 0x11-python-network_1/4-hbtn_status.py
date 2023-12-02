@@ -10,6 +10,6 @@ if __name__ == "__main__":
     res = req.text
     print(
         f"Body response:\n"
-        f"\t- type: {type(res)}\n"
+        f"\t- type:{type(res)}\n"
         f"\t- content: {res}\n"
     )
