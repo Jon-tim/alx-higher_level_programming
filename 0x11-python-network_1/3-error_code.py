@@ -11,10 +11,9 @@ import sys
 if __name__ == "__main__":
     url = sys.argv[1]
     req = urllib.request.Request(url)
-    with urllib.request.Request(url) as req:
-        try:
-            response = urllib.request.urlopen(req)
-            html = response.read()
-            print(html.decode('utf-8'))
-        except urllib.error.HTTPError as e:
-            print(f"Error code: {e.code}")
+    try:
+        with urllib.request.urlopen(req) as response
+        html = response.read()
+        print(html.decode('utf-8'))
+    except urllib.error.HTTPError as e:
+        print(f"Error code: {e.code}")
