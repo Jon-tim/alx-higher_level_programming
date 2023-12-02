@@ -11,8 +11,9 @@ import sys
 if __name__ == "__main__":
     url = sys.argv[1]
     req = urllib.request.Request(url)
-    with urllib.request.urlopen(req) as response:
+    with urllib.request.Request(url) as req:
         try:
+            response = urllib.request.urlopen(req)
             html = response.read()
             print(html.decode('utf-8'))
         except urllib.error.HTTPError as e:
