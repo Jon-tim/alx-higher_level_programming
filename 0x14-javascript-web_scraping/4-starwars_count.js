@@ -8,6 +8,5 @@ request.get(address, function (response, body) {
   const wedgeAntillesPresent = result.filter(film =>
     film.characters.includes('https://swapi-api.alx-tools.com/api/people/18/')
   );
-
   console.log(wedgeAntillesPresent.length);
 });
