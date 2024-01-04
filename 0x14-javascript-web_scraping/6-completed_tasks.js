@@ -13,7 +13,7 @@ request.get(API, function (response, body) {
         doneTask += 1;
       }
     }
-    data[i] = doneTask;
+    if (doneTask > 0) data[i] = doneTask;
   }
   console.log(data);
 });
