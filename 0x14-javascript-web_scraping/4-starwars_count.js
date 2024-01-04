@@ -2,12 +2,13 @@
 
 const request = require('request');
 const address = process.argv[2];
-const targetID = '18';
 
 request.get(address, function (response, body) {
   const result = JSON.parse(body.body).results;
-  const wedgeAntillesPresent = result.filter(film =>
-    film.characters.some(character => character.includes(targetID))
-  );
-  console.log(wedgeAntillesPresent.length);
+  let wedgeAntillesPresent = 0;
+  result.forEach(film =>
+    film.characters.forEach(character => {
+      if (character.endsWith('18/')) wedgeAntillesPresent += 1;
+    }));
+  console.log(wedgeAntillesPresent);
 });
